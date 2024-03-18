@@ -1,6 +1,7 @@
 package com.example.dependencyinjection;
 
 import com.example.dependencyinjection.controller.ConstructorGreetingController;
+import com.example.dependencyinjection.controller.PetController;
 import com.example.dependencyinjection.controller.PropertyGreetingController;
 import com.example.dependencyinjection.controller.SetterGreetingController;
 import org.springframework.boot.SpringApplication;
@@ -23,6 +24,10 @@ public class DependencyInjectionApplication {
         SetterGreetingController setterGreetingController = (SetterGreetingController) ctx.getBean("setterGreetingController");
         System.out.println(".......... setter.");
         System.out.println(setterGreetingController.sayGreeting());
+
+      PetController petController = (PetController) ctx.getBean("petController");
+      System.out.println("........ pet");
+      System.out.println(petController.check());
     }
 
 }
